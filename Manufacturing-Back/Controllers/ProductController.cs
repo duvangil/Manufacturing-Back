@@ -25,7 +25,7 @@ namespace Manufacturing_Back.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return Ok(await ProductService.GetAllAsync(p => p.State == ProductStates.InStock, includeProperties: "ElaborationType").ConfigureAwait(false));
+            return Ok(await ProductService.GetAllAsync(includeProperties: "ElaborationType").ConfigureAwait(false));
         }
 
         // POST api/Product
@@ -84,7 +84,7 @@ namespace Manufacturing_Back.Controllers
             if (errors.Any())
                 return BadRequest(new { message = "Errores durante la importación", errors });
 
-            return Ok("Importación exitosa.");
+            return Ok(new { message = "importación Exitosa" });
         }
     }
 }

@@ -10,7 +10,7 @@ namespace MF.Domain.Dtos
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
-        //public string? ElaborationTypeName { get; set; }
+        public string? ElaborationTypeName { get; set; }
 
         public Guid ElaborationTypeId { get; set; }
         public string State { get; set; }
